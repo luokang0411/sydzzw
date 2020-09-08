@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.zrzy.sydzzw.dao.dao2.DictDao">
+
+    <select id="getJzytDatas" parameterType="string" resultType="com.geostar.zrzy.sydzzw.entity.TreeInfo">
+        select dictid as id,dictname as text,parentid as pid,sortno
+        from EOS_DICT_ENTRY t where dicttypeid = 'JZYT'
+    </select>
+
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.zrzy.sydzzw.dao.dao1.UserDao">
+
+    <insert id="insertUserInfo" parameterType="com.geostar.zrzy.sydzzw.entity.UserInfo">
+        insert into USER_INFO (usercode,username,password,cardType,cardId,cnname,phone)
+          values (#{usercode},#{username},#{password},#{cardType},#{cardId},#{name},#{phone})
+    </insert>
+
+    <select id="isUserExists" parameterType="string" resultType="int">
+        select count(1) from USER_INFO where username = #{username}
+    </select>
+
+    <select id="passwordValidate" parameterType="map" resultType="int">
+        select count(1) from USER_INFO where username = #{username} and password= #{password}
+    </select>
+
+    <update id="updatePassword" parameterType="map">
+        update USER_INFO set password= #{password} where username = #{username}
+    </update>
+
+</mapper>

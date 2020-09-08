@@ -1,0 +1,318 @@
+@charset "utf-8";
+/* CSS Document */
+/*reset*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, p, span, em, b, i, input, select, textarea{margin:0; padding:0;}
+body{font-size:12px; line-height:180%; font-family:Verdana, Simsun;}
+ul, li{list-style:none;}
+em, i{font-style:normal;}
+img{border:0;}
+a{text-decoration:none; color:#333;}
+a:hover{text-decoration:underline; color:#3DA2E1;}
+
+
+
+
+
+
+/*default*/
+.left{text-align:left;}
+.right{text-align:right;}
+.center{text-align:center;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+.clearfix:after{display:block; height:0; font-size:0; content:"."; clear:both;}
+.clearfix{*zoom:1;}
+
+html, body{height:100%;}
+
+body.login .wrap{position:relative; width:100%; height:100%; min-width:1200px; min-height:580px;}
+.login .foot{position:absolute; left:0; bottom:0; width:100%; height:58px; background:url(../images/login-foot-bg.gif) repeat-x;}
+.login .foot p{line-height:58px; text-align:center; color:#4b4b4b;}
+
+.login-box{padding:280px 0 0 450px; width:390px; height:215px;}
+.login-box h3{padding-left:60px; margin-bottom:15px; height:30px; letter-spacing:3px; font:18px/30px Simhei; color:#2aabd6;}
+.login-item{margin-bottom:10px; height:35px;}
+.login-item em{margin-right:2px; font:bold 14px/35px Simsun; color:#6c6c6c;}
+.login-item .mini-textbox-border{height:24px; vertical-align:middle; font:14px/25px Simsun; border:1px solid #7ea2a6; }
+.login-error{margin-bottom:15px; padding-left:62px; color:#ff4107;}
+.login-btn input{margin-right:30px; width:80px; height:30px; line-height:999px; font-size:0; border:0; background-repeat:no-repeat; background-position:center center; cursor:pointer;}
+
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "Microsoft YaHei";
+	box-sizing:border-box;
+}
+html,body {
+	font-size: 16px;
+	background: #f6f6f6;
+	overflow:hidden;
+}
+
+body.login {
+	/* background: #dcf8fb; */
+}
+
+.head {
+	width: 100%;
+	/* height: calc((100% - 600px)/2); */
+	height:15%;
+	line-height: calc((100% - 600px)/2);
+	background:#fff;
+	float:left;
+}
+
+.head a {
+	height: 100%;
+	display: inline-block;
+	margin-left: 40px;
+	position:relative;
+	cursor: pointer;
+}
+
+.head a img{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+
+.mainContent {
+	width: 100%;
+    height: 70%;
+    box-sizing: border-box;
+    float: left;
+    background: url(../images/login_bg.png) center center;
+    background-size: cover;
+}
+
+.content {
+	/* width:auto; */
+	width:100%;
+	height:100%;
+	float:right;
+    text-align: center;
+    box-sizing: border-box;
+    position:relative;
+}
+
+.loginDiv {
+	width: 320px;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px;
+	vertical-align: middle;
+	font-size: 14px;
+	background: rgba(255, 255, 255, 1);
+	position:absolute;
+	right:24%;
+	bottom:100px;
+	margin:auto;
+	border-radius:6px;
+	box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.38);
+}
+
+.title {
+	text-align: center;
+	font-size: 18px;
+	color:#0888c9;
+	border-bottom:1px solid #b4b4b4;
+    padding-bottom: 5px;
+}
+
+.loginbox {
+	height: 44px;
+	border: 1px solid #c0c0c0;
+	padding-left: 40px;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position: 12px 10px;
+	margin: 20px 0px;
+}
+
+.icon_user {
+	background-image: url("../images/login_loginbox_user.png");
+}
+
+.icon_password {
+	background-image: url("../images/login_loginbox_password.png");
+}
+
+.loginbox input {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+}
+
+.toReset {
+	color: #ff8302;
+	float: right;
+	text-decoration: none;
+}
+
+.toReset:hover {
+	text-decoration: underline;
+}
+.loginBtnWrap{
+    width: 100%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+	margin-bottom: 12px;
+}
+.loginBtn {
+	text-align: center;
+	color: #fff;
+	background: #ff8302;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	padding: 5px 0px;
+	width: 100%;
+}
+
+.loginBtn:active {
+	background: #ff7022;
+}
+
+.inner-box {
+	text-align: left;
+	margin: 20px 0px;
+}
+
+.inner-box * {
+	vertical-align: middle;
+}
+
+.footer {
+	background: #fff;
+	/* height: calc((100% - 600px)/2); */
+	height:15%;
+	width: 100%;
+	float:left;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position:relative;
+}
+
+.footer .footerBox{
+	width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.footer a {
+	color: #6e6e6e;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.login-error {
+	padding:0;
+	margin-bottom:0;
+	text-align:left;
+	max-height:60px;
+	min-height:20px;
+}
+
+.mini-textbox {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	position: relative;
+}
+
+.mini-textbox-border {
+	background: white;
+	border: none;
+	width: auto;
+	height: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.mini-errorIcon {
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	display: none;
+	cursor: default;
+	margin-top: 2px;
+	position: absolute;
+	right: 1px;
+	top: 10px;
+}
+
+/*清除CA造成的影响*/
+#GDCACom {
+	display: none;
+}
+
+.bg-bar {
+	text-align: center;
+    color: red;
+}
+
+.bg-bar span {
+	position: relative;
+	top: -15px;
+	font-size: 16px;
+	background: #dcf8fb;
+	padding: 0 4px;
+	color: #ff0202;
+	letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1440px){
+	.loginDiv{
+	    width: 270px;
+    	/*height: 260px;*/
+	}
+	.loginbox {
+		margin: 10px 0px;
+		height:36px;
+	}
+	.inner-box {
+		margin: 10px 0px;
+	}
+	.loginBtn{
+		padding:5px 100px;
+	}
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    box-shadow: 0 0 0px 1000px rgba(255,255,255,0.5) inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.5) inset !important;
+}
+
+@media screen and (max-width: 1500px) { 
+.loginDiv {right:20%;} 
+}
+
+@media screen and (max-width: 1400px) { 
+.loginDiv {right:16%;} 
+}

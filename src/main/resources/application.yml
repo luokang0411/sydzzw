@@ -1,0 +1,44 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /sydzzw
+
+spring:
+  application:
+    name: sydzzw
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    primary:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@192.168.32.62:1524/orcl
+#      jdbc-url: jdbc:oracle:thin:@10.70.90.16:1521/ORCL
+#      jdbc-url: jdbc:oracle:thin:@59.197.229.126:9989/dgzjk
+      username: eos
+      password: eos
+
+    secondary:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@192.168.32.62:1524/orcl
+#      jdbc-url: jdbc:oracle:thin:@10.70.90.16:1521/ORCL
+#      jdbc-url: jdbc:oracle:thin:@59.197.229.126:9989/dgzjk
+      username: bps
+      password: bps
+
+mybatis:
+  mapper-locations: classpath:mapper/mapper*/*Mapper.xml
+  type-aliases-package: com.geostar.zrzy.sydzzw.entity
+  config-location: classpath:mybatis-config.xml
+
+mail:
+  host: "smtp.163.com"
+  username: "gwlmbemail@163.com"
+  password: "GXOXHIBCSCJCFVIR"
+  url: "http://59.197.229.126/SendMessage/SendMessageService.asmx?wsdl"
+
+
+
+logging:
+  config: classpath:logback.xml

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.zrzy.sydzzw.dao.dao1.BuildingDao">
+
+    <insert id="insertBuildingInfo" parameterType="com.geostar.zrzy.sydzzw.entity.BuildingInfo">
+        insert into BUILDING_INFO (kid,jsdw,xmmc,xmdz,dkbh,cjz,sftj)
+          values (#{kid},#{jsdw},#{xmmc},#{xmdz},#{dkbh},#{cjz},#{sftj})
+    </insert>
+
+    <insert id="insertJzwInfos" parameterType="list">
+        insert into JZW_INFO (kid,pid,dkbh,jzdh,jzyt,dscs,dxcs,dsgd,dsmj,dxmj,jrmj,bz,xh)
+        <foreach collection="list" item="item" index="index" separator="UNION ALL">
+            select #{item.kid},#{item.pid},#{item.dkbh},#{item.jzdh},#{item.jzyt},#{item.dscs},
+              #{item.dxcs},#{item.dsgd},#{item.dsmj},#{item.dxmj},#{item.jrmj},#{item.bz},#{item.xh} from dual
+        </foreach>
+    </insert>
+
+    <insert id="insertJzwDetailInfos" parameterType="list">
+        insert into JZW_DETAIL_INFO (kid,pid,jzdh,jzyt,qsc,zzc,jrmj,zmj)
+        <foreach collection="list" item="item" index="index" separator="UNION ALL">
+            select #{item.kid},#{item.pid},#{item.jzdh},#{item.jzyt},#{item.qsc},#{item.zzc},#{item.jrmj},#{item.zmj} from dual
+        </foreach>
+    </insert>
+
+    <delete id="deleteBuildingInfo" parameterType="string">
+        delete from BUILDING_INFO where kid = #{kid}
+    </delete>
+
+    <delete id="deleteJzwInfos" parameterType="string">
+        delete from JZW_INFO where pid = #{pid}
+    </delete>
+
+    <delete id="deleteJzwDetailInfos" parameterType="string">
+        delete from JZW_DETAIL_INFO where pid = #{pid}
+    </delete>
+
+    <select id="getBuildingInfo" parameterType="string" resultType="com.geostar.zrzy.sydzzw.entity.BuildingInfo">
+        select * from BUILDING_INFO where kid = #{kid}
+    </select>
+
+    <select id="getJzwInfos" parameterType="string" resultType="com.geostar.zrzy.sydzzw.entity.JzwInfo">
+        select kid,dkbh,jzdh,jzyt,dscs,dxcs,dsgd,dsmj,dxmj,jrmj,bz from JZW_INFO where pid = #{pid}
+    </select>
+
+    <select id="getJzwDetailInfos" parameterType="string" resultType="com.geostar.zrzy.sydzzw.entity.JzwDetailInfo">
+        select kid,jzdh,jzyt,qsc,zzc,jrmj,zmj from JZW_DETAIL_INFO where pid = #{pid}
+    </select>
+
+    <select id="getBuildingInfoList" parameterType="map" resultType="com.geostar.zrzy.sydzzw.entity.BuildingInfo">
+        select * from
+            (select  t.*,rownum as rnum from
+                (select * from building_info t where cjz = #{cjz} order by cjsj desc)t where rownum &lt;= #{end})
+            where rnum > #{begin}
+    </select>
+
+    <select id="getBuildingInfoCount" parameterType="map" resultType="int">
+        select count(1) from BUILDING_INFO where cjz = #{cjz}
+    </select>
+
+    <select id="getBuildingInfos" parameterType="string" resultType="com.geostar.zrzy.sydzzw.entity.BuildingInfo">
+        select * from building_info t where cjz = #{cjz}
+    </select>
+
+</mapper>
